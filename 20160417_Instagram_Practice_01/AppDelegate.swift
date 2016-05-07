@@ -15,7 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID("2950226cc924451aadcdf4d4f0a3f341", withClientSecret: "ab851d01-b390-48ae-9cb5-894121e89281")
+        
         return true
     }
 
