@@ -38,6 +38,7 @@
 		E2C4F8B91CC35748009CC843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C4F8B71CC35748009CC843 /* Main.storyboard */; };
 		E2C4F8BB1CC35748009CC843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2C4F8BA1CC35748009CC843 /* Assets.xcassets */; };
 		E2C4F8BE1CC35748009CC843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2C4F8BC1CC35748009CC843 /* LaunchScreen.storyboard */; };
+		E2CE32841CDE059A000381B3 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CE32831CDE059A000381B3 /* CommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 		E2C4F8BA1CC35748009CC843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2C4F8BD1CC35748009CC843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2C4F8BF1CC35748009CC843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2CE32831CDE059A000381B3 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				E261E4D81CD6EC9D000F3250 /* PostData.swift */,
 				E261E4DA1CD6F10B000F3250 /* PostTableViewCell.swift */,
 				E261E4DB1CD6F10B000F3250 /* PostTableViewCell.xib */,
+				E2CE32831CDE059A000381B3 /* CommentViewController.swift */,
 			);
 			path = 20160417_Instagram_Practice_01;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				E261E4DC1CD6F10B000F3250 /* PostTableViewCell.swift in Sources */,
 				E2AE73321CC3756000BFD9E6 /* SettingViewController.swift in Sources */,
 				E2AE732C1CC3752500BFD9E6 /* HomeViewController.swift in Sources */,
+				E2CE32841CDE059A000381B3 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -83,10 +83,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PostTableViewCell
         cell.postData = postArray[indexPath.row]
         
-        // Setting the button action inside the cell.
+        // Setting the likeButton action inside the cell.
         cell.likeButton.addTarget(self, action: #selector(HomeViewController.handleButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         // Old school of the above.
         // cell.likeButton.addTarget(self, action:"handleButton:event:", forControlEvents:  UIControlEvents.TouchUpInside)
+        
+        // Setting the commentButton action inside the cell.
+        cell.commentButton.addTarget(self, action: #selector(HomeViewController.handleCommentButton(_:event:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         // Re-layouting with the new number of rows.
         cell.layoutIfNeeded()
@@ -115,7 +118,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     }
     
-    // Method to be called when the button inside a cell is tapped.
+    // Method to be called when the likeButton inside a cell is tapped.
     func handleButton(sender: UIButton, event:UIEvent) {
         
         // Acquiring the cell index of the tapped cell.
@@ -154,5 +157,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let post = ["caption": caption!, "image": imageString!, "name": name!, "time": time, "likes": likes]
         let postRef = Firebase(url: CommonConst.FirebaseURL).childByAppendingPath(CommonConst.PostPATH)
         postRef.childByAppendingPath(postData.id).setValue(post)
+    }
+    
+    
+    // Method to be called when the commentButton inside a cell is tapped.
+    func handleCommentButton(sender: UIButton, event:UIEvent) {
+        
+        // Acquiring the cell index of the tapped cell.
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        
+        // Acquiring the index data of the tapped from the postArray.
+        let postData = postArray[indexPath!.row]
+        
+        // Opening the Comment window modally, referring to "ImageSelect to Post" modal with handing data.
+        let commentViewController = self.storyboard?.instantiateViewControllerWithIdentifier("Comment") as! CommentViewController
+        commentViewController.postData = postData
+        presentViewController(commentViewController, animated: true, completion: nil)
     }
 }

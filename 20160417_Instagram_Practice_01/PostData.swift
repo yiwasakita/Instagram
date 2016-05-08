@@ -15,6 +15,8 @@ class PostData: NSObject {
     var imageString: String?
     var name: String?
     var caption: String?
+    // var commentorName: String?
+    var comment: String?
     var date: NSDate?
     var likes: [String] = []
     var isLiked: Bool = false
