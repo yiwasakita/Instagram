@@ -31,8 +31,11 @@ class PostViewController: UIViewController {
         // Acquring the time.
         let time = NSDate.timeIntervalSinceReferenceDate()
         
+        // Default comment.
+        let comment = "コメントどうぞ！"
+        
         // Making a dictionary and saving it to the Firebase.
-        let postData = ["caption": textField.text!, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "name":name, "time":time]
+        let postData = ["caption": textField.text!, "image": imageData!.base64EncodedStringWithOptions(.Encoding64CharacterLineLength), "name":name, "time":time, "comment":comment]
         postRef.childByAutoId().setValue(postData)
         
         // Displaying completion of posting on HUD.

@@ -30,26 +30,6 @@ class CommentViewController: UIViewController {
         */
         let comment = commentTextField.text
         
-        // Preparing the data to be saved into the Firebase.
-        /*
-        let uid = firebaseRef.authData.uid
-        
-        if postData.isLiked {
-            // Removing the ID if it has been already liked.
-            var index = -1
-            for likeId in postData.likes {
-                if likeId == uid {
-                    // Keeping the index for removing it.
-                    index = postData.likes.indexOf(likeId)!
-                    break
-                }
-            }
-            postData.likes.removeAtIndex(index)
-        } else {
-            postData.likes.append(uid)
-        }
-        */
-        
         let imageString = postData.imageString
         let name = postData.name
         let caption = postData.caption

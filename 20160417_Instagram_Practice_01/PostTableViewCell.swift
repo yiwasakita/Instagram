@@ -36,7 +36,6 @@ class PostTableViewCell: UITableViewCell {
         
         postImageView.image = postData!.image
         captionLabel.text = "\(postData!.name!) : \(postData!.caption!)"
-        print(postData!.caption!)
         
         if postData!.comment != nil {
             // commentLabel.text = "\(postData!.commentorName!) : \(postData!.comment!)"
