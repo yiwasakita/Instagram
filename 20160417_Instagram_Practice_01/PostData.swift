@@ -30,6 +30,8 @@ class PostData: NSObject {
         name = snapshot.value.objectForKey("name") as? String
         caption = snapshot.value.objectForKey("caption") as? String
         
+        comment = snapshot.value.objectForKey("comment") as? String
+        
         if let likes = snapshot.value.objectForKey("likes") as? [String] {
             self.likes = likes
         }
